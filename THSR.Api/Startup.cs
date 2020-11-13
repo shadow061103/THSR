@@ -1,17 +1,17 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
+using AutoMapper;
+using CoreProfiler.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using Microsoft.OpenApi.Models;
+using THSR.Api.Infrastructure.DI;
+using THSR.Api.Infrastructure.Extension;
 
-namespace THSR
+namespace THSR.Api
 {
     public class Startup
     {
@@ -26,6 +26,30 @@ namespace THSR
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo
+                {
+                    Version = "v1",
+                    Title = "THSR API",
+                    Description = "This is THSR ASP.NET Core 3.1 RESTful API."
+                });
+
+                var basePath = AppContext.BaseDirectory;
+                var xmlFiles = Directory.EnumerateFiles(basePath, $"*.xml", SearchOption.TopDirectoryOnly);
+
+                foreach (var xmlFile in xmlFiles)
+                {
+                    c.IncludeXmlComments(xmlFile, true);
+                }
+            });
+
+            services.AddElasticsearch(Configuration);
+
+            services.AddDependencyInjection(Configuration);
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +60,8 @@ namespace THSR
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCoreProfiler();
+
             app.UseHttpsRedirection();
 
             app.UseRouting();
@@ -45,6 +71,12 @@ namespace THSR
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+            });
+
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core 3.1 THSR v1.0.0");
             });
         }
     }

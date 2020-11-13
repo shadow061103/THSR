@@ -4,6 +4,6 @@ D:\SideProject\THSR\THSR.Common\bin\Debug\netcoreapp3.1\THSR.Common.pdb
 D:\SideProject\THSR\THSR.Common\obj\Debug\netcoreapp3.1\THSR.Common.csprojAssemblyReference.cache
 D:\SideProject\THSR\THSR.Common\obj\Debug\netcoreapp3.1\THSR.Common.AssemblyInfoInputs.cache
 D:\SideProject\THSR\THSR.Common\obj\Debug\netcoreapp3.1\THSR.Common.AssemblyInfo.cs
-D:\SideProject\THSR\THSR.Common\obj\Debug\netcoreapp3.1\THSR.Common.csproj.CoreCompileInputs.cache
 D:\SideProject\THSR\THSR.Common\obj\Debug\netcoreapp3.1\THSR.Common.dll
 D:\SideProject\THSR\THSR.Common\obj\Debug\netcoreapp3.1\THSR.Common.pdb
+D:\SideProject\THSR\THSR.Common\obj\Debug\netcoreapp3.1\THSR.Common.csproj.CoreCompileInputs.cache

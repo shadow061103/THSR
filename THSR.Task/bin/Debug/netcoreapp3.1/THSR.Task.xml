@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>THSR.Task</name>
+    </assembly>
+    <members>
+        <member name="T:THSR.Task.Infrastructure.DI.DependencyInjectionExtensions">
+            <summary>
+            DI
+            </summary>
+        </member>
+        <member name="M:THSR.Task.Infrastructure.Extension.ElasticsearchExtensions.AddElasticsearch(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the elasticsearch.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="T:THSR.Task.Infrastructure.Extension.ElasticSearchSetting">
+            <summary>
+            ElasticSearch Setting
+            </summary>
+        </member>
+        <member name="M:THSR.Task.Infrastructure.Hangfire.HangfireAuthorizeFilter.#ctor(Microsoft.AspNetCore.Http.IHttpContextAccessor,System.String[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:THSR.Task.Infrastructure.Hangfire.HangfireAuthorizeFilter"/> class.
+            </summary>
+            <param name="httpContextAccessor">The HttpContextAccessor.</param>
+            <param name="users">The users.</param>
+        </member>
+        <member name="M:THSR.Task.Infrastructure.Hangfire.HangfireAuthorizeFilter.IsAuthenticated(System.String)">
+            <summary>
+            Determines whether this instance is authenticated.
+            </summary>
+            <param name="userName">Name of the user.</param>
+            <returns><c>true</c> if this instance is authenticated; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.EnableServer">
+            <summary>
+            EnableServer.
+            </summary>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.EnableDashboard">
+            <summary>
+            EnableDashboard.
+            </summary>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.ServerName">
+            <summary>
+            ServerName.
+            </summary>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.WorkerCount">
+            <summary>
+            Hangfire's WorkerCount.
+            </summary>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.Queues">
+            <summary>
+            Hangfire's queues.
+            </summary>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.DashboardUsers">
+            <summary>
+            Hangfire Dashboard Users.
+            </summary>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.SchemaName">
+            <summary>
+            Hangfire Table Schema Name (default: Hangfire).
+            </summary>
+        </member>
+        <member name="P:THSR.Task.Infrastructure.Hangfire.HangfireSettings.PrepareSchemaIfNecessary">
+            <summary>
+            PrepareSchemaIfNecessary (default: false).
+            </summary>
+        </member>
+    </members>
+</doc>

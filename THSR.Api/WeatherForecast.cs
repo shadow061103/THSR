@@ -1,6 +1,6 @@
 using System;
 
-namespace THSR
+namespace THSR.Api
 {
     public class WeatherForecast
     {

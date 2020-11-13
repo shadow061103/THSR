@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>THSR.Api</name>
+    </assembly>
+    <members>
+        <member name="T:THSR.Api.Infrastructure.DI.DependencyInjectionExtensions">
+            <summary>
+            DI
+            </summary>
+        </member>
+        <member name="M:THSR.Api.Infrastructure.Extension.ElasticsearchExtensions.AddElasticsearch(Microsoft.Extensions.DependencyInjection.IServiceCollection,Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Adds the elasticsearch.
+            </summary>
+            <param name="services">The services.</param>
+            <param name="configuration">The configuration.</param>
+        </member>
+        <member name="T:THSR.Api.Infrastructure.Extension.ElasticSearchSetting">
+            <summary>
+            ElasticSearch Setting
+            </summary>
+        </member>
+    </members>
+</doc>
