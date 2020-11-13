@@ -1,0 +1,11 @@
+
+下載
+docker pull microsoft/mssql-server-linux:latest
+cmd執行
+
+docker run --rm -d -e SA_PASSWORD=P@ssw0rd -e ACCEPT_EULA=Y -ti -p 12345:1433 microsoft/mssql-server-linux
+
+
+伺服器:127.0.0.1,12345
+帳號:sa
+密碼:P@ssw0rd

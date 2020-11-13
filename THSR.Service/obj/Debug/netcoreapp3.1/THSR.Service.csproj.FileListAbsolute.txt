@@ -1,0 +1,8 @@
+D:\SideProject\THSR\THSR.Service\bin\Debug\netcoreapp3.1\THSR.Service.deps.json
+D:\SideProject\THSR\THSR.Service\bin\Debug\netcoreapp3.1\THSR.Service.dll
+D:\SideProject\THSR\THSR.Service\bin\Debug\netcoreapp3.1\THSR.Service.pdb
+D:\SideProject\THSR\THSR.Service\obj\Debug\netcoreapp3.1\THSR.Service.AssemblyInfoInputs.cache
+D:\SideProject\THSR\THSR.Service\obj\Debug\netcoreapp3.1\THSR.Service.AssemblyInfo.cs
+D:\SideProject\THSR\THSR.Service\obj\Debug\netcoreapp3.1\THSR.Service.csproj.CoreCompileInputs.cache
+D:\SideProject\THSR\THSR.Service\obj\Debug\netcoreapp3.1\THSR.Service.dll
+D:\SideProject\THSR\THSR.Service\obj\Debug\netcoreapp3.1\THSR.Service.pdb

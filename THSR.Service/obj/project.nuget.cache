@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "H0u3008ZkVUf0Cdx5eHJ0S4mjdA1Re8C5a8Ca7ILSdWugKoshuI+dokz2ljny42N2heA0ISgigTcQZf70nhUBA==",
+  "success": true,
+  "projectFilePath": "D:\\SideProject\\THSR\\THSR.Service\\THSR.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\G5341\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.2\\microsoft.aspnetcore.app.ref.3.1.2.nupkg.sha512"
+  ],
+  "logs": []
+}
