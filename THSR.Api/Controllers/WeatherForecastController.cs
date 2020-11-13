@@ -4,11 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using THSR.Repository.Interfaces;
+using THSR.Repository.Models;
 
 namespace THSR.Api.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -18,9 +20,12 @@ namespace THSR.Api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        private readonly IStationRepository _stationRepository;
+
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IStationRepository stationRepository)
         {
             _logger = logger;
+            _stationRepository = stationRepository;
         }
 
         [HttpGet]
@@ -34,6 +39,13 @@ namespace THSR.Api.Controllers
                 Summary = Summaries[rng.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<RailStation>> GetStation()
+        {
+            var model = await _stationRepository.GetStation();
+            return model;
         }
     }
 }
