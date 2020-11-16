@@ -4,12 +4,14 @@ using AutoMapper;
 using CoreProfiler.Web;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using THSR.Api.Infrastructure.DI;
 using THSR.Api.Infrastructure.Extension;
+using THSR.Repository.Models.Context;
 
 namespace THSR.Api
 {
@@ -50,6 +52,10 @@ namespace THSR.Api
             services.AddDependencyInjection(Configuration);
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+            //EF
+            var conn = Configuration.GetConnectionString("THSR");
+            services.AddDbContext<DbContext, THSRContext>(options => options.UseSqlServer(conn));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

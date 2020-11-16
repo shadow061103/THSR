@@ -1,9 +1,13 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RestSharp;
 using THSR.Repository.Implements;
 using THSR.Repository.Infrastructure.Helpers;
 using THSR.Repository.Interfaces;
+using THSR.Repository.Models.Context;
+using THSR.Service.Implements;
+using THSR.Service.Interface;
 
 namespace THSR.Task.Infrastructure.DI
 {
@@ -29,13 +33,15 @@ namespace THSR.Task.Infrastructure.DI
 
         private static void AddServiceDependencyInjection(this IServiceCollection services)
         {
+            services.AddTransient<IStationService, StationService>();
         }
 
         private static void AddRepositoryDependencyInjection(this IServiceCollection services)
         {
             services.AddSingleton<IRestClient, RestClient>();
             services.AddSingleton<IApiHelper, ApiHelper>();
-            services.AddTransient<IStationRepository, StationRepository>();
+            services.AddTransient<IWsStationRepository, WsStationRepository>();
+            services.AddScoped<DbContext, THSRContext>();
         }
     }
 }

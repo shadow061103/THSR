@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using THSR.Repository.Interfaces;
-using THSR.Repository.Models;
+using THSR.Repository.Models.PTX;
 
 namespace THSR.Api.Controllers
 {
@@ -20,9 +20,9 @@ namespace THSR.Api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        private readonly IStationRepository _stationRepository;
+        private readonly IWsStationRepository _stationRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IStationRepository stationRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWsStationRepository stationRepository)
         {
             _logger = logger;
             _stationRepository = stationRepository;
@@ -42,7 +42,7 @@ namespace THSR.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<RailStation>> GetStation()
+        public async Task<List<HSRailStationPTXModel>> GetStation()
         {
             var model = await _stationRepository.GetStation();
             return model;
