@@ -12,3 +12,4 @@ D:\SideProject\THSR\THSR.Service\bin\Debug\netcoreapp3.1\THSR.Common.pdb
 D:\SideProject\THSR\THSR.Service\bin\Debug\netcoreapp3.1\THSR.Repository.pdb
 D:\SideProject\THSR\THSR.Service\obj\Debug\netcoreapp3.1\THSR.Service.csprojAssemblyReference.cache
 D:\SideProject\THSR\THSR.Service\obj\Debug\netcoreapp3.1\THSR.Service.csproj.CopyComplete
+D:\SideProject\THSR\THSR.Service\bin\Debug\netcoreapp3.1\key.json

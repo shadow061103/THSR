@@ -1,6 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using RestSharp;
 using THSR.Repository.Implements;
+using THSR.Repository.Infrastructure.Helpers;
 using THSR.Repository.Interfaces;
 
 namespace THSR.Api.Infrastructure.DI
@@ -31,6 +33,8 @@ namespace THSR.Api.Infrastructure.DI
 
         private static void AddRepositoryDependencyInjection(this IServiceCollection services)
         {
+            services.AddSingleton<IRestClient, RestClient>();
+            services.AddSingleton<IApiHelper, ApiHelper>();
             services.AddTransient<IStationRepository, StationRepository>();
         }
     }

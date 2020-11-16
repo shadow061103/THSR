@@ -12,6 +12,14 @@ namespace THSR.Repository.Infrastructure.Helpers
         Task<T> GetAsync<T>(string uri);
 
         /// <summary>
+        /// 非同步呼叫PTX Api
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="uri">The URI.</param>
+        /// <returns></returns>
+        Task<T> GetPTXAsync<T>(string uri);
+
+        /// <summary>
         /// 非同步呼叫Api(帶參數)
         /// </summary>
         /// <param name="uri">Api位置</param>

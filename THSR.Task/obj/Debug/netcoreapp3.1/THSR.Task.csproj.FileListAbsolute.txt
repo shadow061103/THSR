@@ -70,3 +70,4 @@ D:\SideProject\THSR\THSR.Task\obj\Debug\netcoreapp3.1\THSR.Task.csproj.CoreCompi
 D:\SideProject\THSR\THSR.Task\obj\Debug\netcoreapp3.1\THSR.Task.MvcApplicationPartsAssemblyInfo.cs
 D:\SideProject\THSR\THSR.Task\obj\Debug\netcoreapp3.1\THSR.Task.MvcApplicationPartsAssemblyInfo.cache
 D:\SideProject\THSR\THSR.Task\bin\Debug\netcoreapp3.1\THSR.Task.xml
+D:\SideProject\THSR\THSR.Task\bin\Debug\netcoreapp3.1\key.json

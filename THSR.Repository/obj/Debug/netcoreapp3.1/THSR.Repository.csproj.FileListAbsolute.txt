@@ -10,3 +10,4 @@ D:\SideProject\THSR\THSR.Repository\bin\Debug\netcoreapp3.1\THSR.Common.dll
 D:\SideProject\THSR\THSR.Repository\bin\Debug\netcoreapp3.1\THSR.Common.pdb
 D:\SideProject\THSR\THSR.Repository\obj\Debug\netcoreapp3.1\THSR.Repository.csproj.CoreCompileInputs.cache
 D:\SideProject\THSR\THSR.Repository\obj\Debug\netcoreapp3.1\THSR.Repository.csproj.CopyComplete
+D:\SideProject\THSR\THSR.Repository\bin\Debug\netcoreapp3.1\key.json

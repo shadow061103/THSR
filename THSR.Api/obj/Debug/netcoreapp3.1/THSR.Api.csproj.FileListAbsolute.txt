@@ -50,3 +50,4 @@ D:\SideProject\THSR\THSR.Api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swag
 D:\SideProject\THSR\THSR.Api\obj\Debug\netcoreapp3.1\THSR.Api.dll
 D:\SideProject\THSR\THSR.Api\obj\Debug\netcoreapp3.1\THSR.Api.pdb
 D:\SideProject\THSR\THSR.Api\obj\Debug\netcoreapp3.1\THSR.Api.genruntimeconfig.cache
+D:\SideProject\THSR\THSR.Api\bin\Debug\netcoreapp3.1\key.json
