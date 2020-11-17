@@ -18,6 +18,7 @@ using THSR.Repository.Models.Context;
 using THSR.Task.Infrastructure.DI;
 using THSR.Task.Infrastructure.Extension;
 using THSR.Task.Infrastructure.Hangfire;
+using THSR.Task.Interfaces;
 
 namespace THSR.Task
 {
@@ -103,7 +104,7 @@ namespace THSR.Task
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, THSRContext context)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider, THSRContext context)
         {
             if (env.IsDevelopment())
             {
@@ -153,6 +154,10 @@ namespace THSR.Task
             );
 
             context.Database.EnsureCreated();
+
+            //啟動定時工作
+            var jobTrigger = serviceProvider.GetService<IJobTrigger>();
+            jobTrigger.OnStart();
         }
     }
 }

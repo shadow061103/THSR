@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using THSR.Repository.Interfaces;
+using THSR.Repository.Models;
 using THSR.Service.Interface;
-using THSR.Service.Models.Station;
 
 namespace THSR.Service.Implements
 {
@@ -13,20 +13,25 @@ namespace THSR.Service.Implements
 
         private IWsTHSRRepository _wsRepository;
 
-        public StationService(IMapper mapper, IWsTHSRRepository wsRepository)
+        private IStationRepository _stationRepository;
+
+        public StationService(IMapper mapper, IWsTHSRRepository wsRepository, IStationRepository stationRepository)
         {
             _mapper = mapper;
             _wsRepository = wsRepository;
+            _stationRepository = stationRepository;
         }
 
         /// <summary>
-        /// Inserts the asynchronous.
+        /// 新增高鐵車站資料
         /// </summary>
         public async Task InsertAsync()
         {
             var source = await _wsRepository.GetStation();
 
-            var stationDto = this._mapper.Map<IEnumerable<HSRailStationDto>>(source);
+            var stations = this._mapper.Map<IEnumerable<Station>>(source);
+
+            await _stationRepository.InsertAsync(stations);
         }
     }
 }

@@ -23,7 +23,9 @@ namespace THSR.Repository.Models.Context
         {
             modelBuilder.Entity<Station>(entity =>
             {
-                entity.HasNoKey();
+                entity.Property(e => e.StationID)
+                    .HasMaxLength(20)
+                    .HasComment("車站代碼");
 
                 entity.Property(e => e.LocationCity)
                     .HasMaxLength(10)
@@ -60,11 +62,6 @@ namespace THSR.Repository.Models.Context
                 entity.Property(e => e.StationEnName)
                     .HasMaxLength(20)
                     .HasComment(" 車站英文名稱");
-
-                entity.Property(e => e.StationID)
-                    .IsRequired()
-                    .HasMaxLength(20)
-                    .HasComment("車站代碼");
 
                 entity.Property(e => e.StationName)
                     .HasMaxLength(20)

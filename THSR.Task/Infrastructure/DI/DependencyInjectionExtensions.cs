@@ -6,6 +6,8 @@ using THSR.Repository.Infrastructure.Helpers;
 using THSR.Repository.Interfaces;
 using THSR.Service.Implements;
 using THSR.Service.Interface;
+using THSR.Task.Interfaces;
+using THSR.Task.Jobs;
 
 namespace THSR.Task.Infrastructure.DI
 {
@@ -27,6 +29,8 @@ namespace THSR.Task.Infrastructure.DI
 
         private static void AddApplicationDependencyInjection(this IServiceCollection services)
         {
+            services.AddScoped<ITHSRInitialJob, THSRInitialJob>();
+            services.AddScoped<IJobTrigger, JobTrigger>();
         }
 
         private static void AddServiceDependencyInjection(this IServiceCollection services)

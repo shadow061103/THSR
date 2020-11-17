@@ -20,9 +20,9 @@ namespace THSR.Api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        private readonly IStationRepository _stationRepository;
+        private readonly IWsTHSRRepository _stationRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IStationRepository stationRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWsTHSRRepository stationRepository)
         {
             _logger = logger;
             _stationRepository = stationRepository;
@@ -42,7 +42,7 @@ namespace THSR.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<List<HSRailStationPTXModel>> GetStation()
+        public async Task<IEnumerable<HSRailStationPTXModel>> GetStation()
         {
             var model = await _stationRepository.GetStation();
             return model;

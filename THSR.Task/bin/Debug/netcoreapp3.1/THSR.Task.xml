@@ -75,5 +75,23 @@
             PrepareSchemaIfNecessary (default: false).
             </summary>
         </member>
+        <member name="M:THSR.Task.Interfaces.ITHSRInitialJob.DataBaseDataInitialCreate(Hangfire.Server.PerformContext)">
+            <summary>
+            排程工作 資料表初始建立資料
+            </summary>
+            <param name="context">The context.</param>
+        </member>
+        <member name="T:THSR.Task.Jobs.THSRInitialJob">
+            <summary>
+            初始化高鐵資料Job
+            </summary>
+            <seealso cref="T:THSR.Task.Interfaces.ITHSRInitialJob"/>
+        </member>
+        <member name="M:THSR.Task.Jobs.THSRInitialJob.DataBaseDataInitialCreate(Hangfire.Server.PerformContext)">
+            <summary>
+            排程工作 資料表初始建立資料
+            </summary>
+            <param name="context">The context.</param>
+        </member>
     </members>
 </doc>
