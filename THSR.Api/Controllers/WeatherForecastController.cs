@@ -20,9 +20,9 @@ namespace THSR.Api.Controllers
 
         private readonly ILogger<WeatherForecastController> _logger;
 
-        private readonly IWsStationRepository _stationRepository;
+        private readonly IStationRepository _stationRepository;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger, IWsStationRepository stationRepository)
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IStationRepository stationRepository)
         {
             _logger = logger;
             _stationRepository = stationRepository;

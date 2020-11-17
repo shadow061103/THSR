@@ -40,7 +40,8 @@ namespace THSR.Api.Infrastructure.DI
         {
             services.AddSingleton<IRestClient, RestClient>();
             services.AddSingleton<IApiHelper, ApiHelper>();
-            services.AddTransient<IWsStationRepository, WsStationRepository>();
+            services.AddTransient<IStationRepository, StationRepository>();
+            services.AddTransient<IWsTHSRRepository, WsTHSRRepository>();
             services.AddScoped<DbContext, THSRContext>();
         }
     }

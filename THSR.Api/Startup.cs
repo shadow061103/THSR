@@ -54,12 +54,12 @@ namespace THSR.Api
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             //EF
-            var conn = Configuration.GetConnectionString("THSR");
-            services.AddDbContext<DbContext, THSRContext>(options => options.UseSqlServer(conn));
+            services.AddDbContext<THSRContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("THSR")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, THSRContext context)
         {
             if (env.IsDevelopment())
             {
@@ -84,6 +84,8 @@ namespace THSR.Api
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "ASP.NET Core 3.1 THSR v1.0.0");
             });
+
+            context.Database.EnsureCreated();
         }
     }
 }

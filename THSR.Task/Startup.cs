@@ -98,12 +98,12 @@ namespace THSR.Task
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             //EF
-            var conn = Configuration.GetConnectionString("THSR");
-            services.AddDbContext<DbContext, THSRContext>(options => options.UseSqlServer(conn));
+            services.AddDbContext<THSRContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("THSR")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, THSRContext context)
         {
             if (env.IsDevelopment())
             {
@@ -151,6 +151,8 @@ namespace THSR.Task
                     IgnoreAntiforgeryToken = true
                 }
             );
+
+            context.Database.EnsureCreated();
         }
     }
 }

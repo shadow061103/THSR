@@ -4,12 +4,13 @@ using THSR.Repository.Models.PTX;
 
 namespace THSR.Repository.Interfaces
 {
-    public interface IWsStationRepository
+    public interface IWsTHSRRepository
     {
         /// <summary>
         /// 取得高鐵車站基本資料
         /// </summary>
         /// <returns></returns>
-        Task<List<HSRailStationPTXModel>> GetStation();
+        /// <exception cref="System.NotImplementedException"></exception>
+        Task<IEnumerable<HSRailStationPTXModel>> GetStation();
     }
 }

@@ -6,11 +6,11 @@ using THSR.Repository.Models.PTX;
 
 namespace THSR.Repository.Implements
 {
-    public class WsStationRepository : IWsStationRepository
+    public class WsTHSRRepository : IWsTHSRRepository
     {
         private readonly IApiHelper _apiHelper;
 
-        public WsStationRepository(IApiHelper apiHelper)
+        public WsTHSRRepository(IApiHelper apiHelper)
         {
             _apiHelper = apiHelper;
         }
@@ -20,10 +20,10 @@ namespace THSR.Repository.Implements
         /// </summary>
         /// <returns></returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public async Task<List<HSRailStationPTXModel>> GetStation()
+        public async Task<IEnumerable<HSRailStationPTXModel>> GetStation()
         {
             var url = "https://ptx.transportdata.tw/MOTC/v2/Rail/THSR/Station?$top=50&$format=JSON";
-            return await _apiHelper.GetPTXAsync<List<HSRailStationPTXModel>>(url);
+            return await _apiHelper.GetPTXAsync<IEnumerable<HSRailStationPTXModel>>(url);
         }
     }
 }
