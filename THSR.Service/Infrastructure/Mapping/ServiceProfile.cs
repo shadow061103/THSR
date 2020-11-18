@@ -22,7 +22,7 @@ namespace THSR.Service.Infrastructure.Mapping
                 .ForMember(dest => dest.StandardFare, opt => opt.MapFrom(c => c.Fares.FirstOrDefault(x => x.TicketType == "標準").Price))
                 .ForMember(dest => dest.FreeFare, opt => opt.MapFrom(c => c.Fares.FirstOrDefault(x => x.TicketType == "自由").Price))
                 .ForMember(dest => dest.OriginStationName, opt => opt.MapFrom(c => c.OriginStationName.Zh_tw))
-                .ForMember(dest => dest.DestinationStationID, opt => opt.MapFrom(c => c.DestinationStationName.Zh_tw))
+                .ForMember(dest => dest.DestinationStationName, opt => opt.MapFrom(c => c.DestinationStationName.Zh_tw))
                 .ForMember(dest => dest.UpdateTime, opt => opt.MapFrom(c => DateTime.Now));
         }
     }

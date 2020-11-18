@@ -43,9 +43,8 @@ namespace THSR.Task.Infrastructure.DI
         {
             services.AddSingleton<IRestClient, RestClient>();
             services.AddSingleton<IApiHelper, ApiHelper>();
-            services.AddTransient<IStationRepository, StationRepository>();
             services.AddTransient<IWsTHSRRepository, WsTHSRRepository>();
-            services.AddTransient<IFareRepository, FareRepository>();
+            services.AddScoped<IProxyRepository, ProxyRepository>();
         }
     }
 }

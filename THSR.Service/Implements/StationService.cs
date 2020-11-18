@@ -13,13 +13,13 @@ namespace THSR.Service.Implements
 
         private IWsTHSRRepository _wsRepository;
 
-        private IStationRepository _stationRepository;
+        private IProxyRepository _proxyRepository;
 
-        public StationService(IMapper mapper, IWsTHSRRepository wsRepository, IStationRepository stationRepository)
+        public StationService(IMapper mapper, IWsTHSRRepository wsRepository, IProxyRepository proxyRepository)
         {
             _mapper = mapper;
             _wsRepository = wsRepository;
-            _stationRepository = stationRepository;
+            _proxyRepository = proxyRepository;
         }
 
         /// <summary>
@@ -31,7 +31,9 @@ namespace THSR.Service.Implements
 
             var stations = this._mapper.Map<IEnumerable<Station>>(source);
 
-            await _stationRepository.InsertAsync(stations);
+            await _proxyRepository.GetRepository<Station>().AddRangeAsync(stations);
+
+            await _proxyRepository.SaveChangesAsync();
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using THSR.Repository.Interfaces;
@@ -12,15 +11,15 @@ namespace THSR.Service.Implements
     {
         private IWsTHSRRepository _wsRepository;
 
-        private IFareRepository _fareRepository;
-
         private IMapper _mapper;
 
-        public FareService(IMapper mapper, IWsTHSRRepository wsRepository, IFareRepository fareRepository)
+        private IProxyRepository _proxyRepository;
+
+        public FareService(IMapper mapper, IWsTHSRRepository wsRepository, IProxyRepository proxyRepository)
         {
             _mapper = mapper;
             _wsRepository = wsRepository;
-            _fareRepository = fareRepository;
+            _proxyRepository = proxyRepository;
         }
 
         /// <summary>
@@ -30,10 +29,11 @@ namespace THSR.Service.Implements
         {
             var source = await _wsRepository.GetFareAsync();
 
-            //南下跟北上票價是相同
-            var fares = this._mapper.Map<IEnumerable<Fare>>(source.Where(x => x.Direction == 1));
+            var fares = this._mapper.Map<IEnumerable<Fare>>(source);
 
-            await _fareRepository.InsertAsync(fares);
+            await _proxyRepository.GetRepository<Fare>().AddRangeAsync(fares);
+
+            await _proxyRepository.SaveChangesAsync();
         }
     }
 }
