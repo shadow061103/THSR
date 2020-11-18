@@ -15,9 +15,12 @@ namespace THSR.Task.Jobs
     {
         private IStationService _stationService;
 
-        public THSRInitialJob(IStationService stationService)
+        private IFareService _fareService;
+
+        public THSRInitialJob(IStationService stationService, IFareService fareService)
         {
             _stationService = stationService;
+            _fareService = fareService;
         }
 
         /// <summary>
@@ -30,6 +33,8 @@ namespace THSR.Task.Jobs
             context.WriteLine($"{DateTime.Now} Start Run InsertStation Job");
 
             await _stationService.InsertAsync();
+
+            await _fareService.InsertASync();
 
             context.WriteLine($"{DateTime.Now} End Run InsertStation Job");
         }

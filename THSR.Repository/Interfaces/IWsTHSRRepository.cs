@@ -11,6 +11,12 @@ namespace THSR.Repository.Interfaces
         /// </summary>
         /// <returns></returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        Task<IEnumerable<HSRailStationPTXModel>> GetStation();
+        Task<IEnumerable<HSRailStationPTXModel>> GetStationAsync();
+
+        /// <summary>
+        /// 取得起訖站票價資料.
+        /// </summary>
+        /// <returns></returns>
+        Task<IEnumerable<HSRailFarePTXModel>> GetFareAsync();
     }
 }

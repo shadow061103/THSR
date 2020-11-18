@@ -2,18 +2,18 @@
 using System;
 using System.Collections.Generic;
 
-namespace THSR.Repository.Models
+namespace THSR.Repository.Models.Entities
 {
     public partial class Station
     {
         /// <summary>
-        /// 車站唯一識別代碼
-        /// </summary>
-        public string StationUID { get; set; }
-        /// <summary>
         /// 車站代碼
         /// </summary>
         public string StationID { get; set; }
+        /// <summary>
+        /// 車站唯一識別代碼
+        /// </summary>
+        public string StationUID { get; set; }
         /// <summary>
         /// 車站簡碼(訂票系統用)
         /// </summary>
@@ -30,14 +30,6 @@ namespace THSR.Repository.Models
         /// 車站地址
         /// </summary>
         public string StationAddress { get; set; }
-        /// <summary>
-        /// 營運業者代碼
-        /// </summary>
-        public string OperatorID { get; set; }
-        /// <summary>
-        /// 本平台資料更新時間
-        /// </summary>
-        public DateTime? UpdateTime { get; set; }
         /// <summary>
         /// 位置緯度
         /// </summary>
@@ -62,5 +54,9 @@ namespace THSR.Repository.Models
         /// 車站位置所屬鄉鎮代碼
         /// </summary>
         public string LocationTownCode { get; set; }
+        /// <summary>
+        /// 更新時間
+        /// </summary>
+        public DateTime? UpdateTime { get; set; }
     }
 }

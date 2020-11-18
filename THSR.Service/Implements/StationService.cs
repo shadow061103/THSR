@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using THSR.Repository.Interfaces;
-using THSR.Repository.Models;
+using THSR.Repository.Models.Entities;
 using THSR.Service.Interface;
 
 namespace THSR.Service.Implements
@@ -27,7 +27,7 @@ namespace THSR.Service.Implements
         /// </summary>
         public async Task InsertAsync()
         {
-            var source = await _wsRepository.GetStation();
+            var source = await _wsRepository.GetStationAsync();
 
             var stations = this._mapper.Map<IEnumerable<Station>>(source);
 

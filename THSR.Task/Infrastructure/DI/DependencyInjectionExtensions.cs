@@ -36,6 +36,7 @@ namespace THSR.Task.Infrastructure.DI
         private static void AddServiceDependencyInjection(this IServiceCollection services)
         {
             services.AddTransient<IStationService, StationService>();
+            services.AddTransient<IFareService, FareService>();
         }
 
         private static void AddRepositoryDependencyInjection(this IServiceCollection services)
@@ -44,6 +45,7 @@ namespace THSR.Task.Infrastructure.DI
             services.AddSingleton<IApiHelper, ApiHelper>();
             services.AddTransient<IStationRepository, StationRepository>();
             services.AddTransient<IWsTHSRRepository, WsTHSRRepository>();
+            services.AddTransient<IFareRepository, FareRepository>();
         }
     }
 }

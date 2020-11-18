@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZZMBVID6NjXqIQW7i3QDN+m+ZmCNsW61VQFsl5iSV7JMlD6Vx3am7DUv7gFpoV++PEqwSAXDnKdeILEbV8QawA==",
+  "dgSpecHash": "VkrD0+CyjCcDlz9O6L0IZqaUAKTrchRns9N5ms2T3azqn2JEEJnTwTJhDO3wZT2ow4DqSo7iYQibyA1P920NcQ==",
   "success": true,
   "projectFilePath": "D:\\SideProject\\THSR\\THSR.Task\\THSR.Task.csproj",
   "expectedPackageFiles": [
@@ -13,6 +13,7 @@
     "C:\\Users\\G5341\\.nuget\\packages\\hangfire.console\\1.4.2\\hangfire.console.1.4.2.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\hangfire.core\\1.7.17\\hangfire.core.1.7.17.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\hangfire.sqlserver\\1.7.17\\hangfire.sqlserver.1.7.17.nupkg.sha512",
+    "C:\\Users\\G5341\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\libuv\\1.10.0\\libuv.1.10.0.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.aspnetcore\\2.0.0\\microsoft.aspnetcore.2.0.0.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.0.0\\microsoft.aspnetcore.authentication.abstractions.2.0.0.nupkg.sha512",
@@ -42,6 +43,7 @@
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.0\\microsoft.entityframeworkcore.5.0.0.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.0\\microsoft.entityframeworkcore.abstractions.5.0.0.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\5.0.0\\microsoft.entityframeworkcore.analyzers.5.0.0.nupkg.sha512",
+    "C:\\Users\\G5341\\.nuget\\packages\\microsoft.entityframeworkcore.design\\5.0.0\\microsoft.entityframeworkcore.design.5.0.0.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\5.0.0\\microsoft.entityframeworkcore.relational.5.0.0.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\5.0.0\\microsoft.entityframeworkcore.sqlserver.5.0.0.nupkg.sha512",
     "C:\\Users\\G5341\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

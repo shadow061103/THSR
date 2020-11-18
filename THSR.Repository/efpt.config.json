@@ -6,12 +6,16 @@
    "IncludeConnectionString": false,
    "ModelNamespace": "",
    "OutputContextPath": "Models",
-   "OutputPath": "Models",
+   "OutputPath": "Models\\Entities",
    "ProjectRootNamespace": "THSR.Repository",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
    "SelectedToBeGenerated": 0,
    "Tables": [
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[Fare]"
+      },
       {
          "HasPrimaryKey": true,
          "Name": "[dbo].[Station]"
