@@ -37,6 +37,7 @@ namespace THSR.Task.Infrastructure.DI
         {
             services.AddTransient<IStationService, StationService>();
             services.AddTransient<IFareService, FareService>();
+            services.AddTransient<ITimetableService, TimetableService>();
         }
 
         private static void AddRepositoryDependencyInjection(this IServiceCollection services)

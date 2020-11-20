@@ -23,6 +23,6 @@ namespace THSR.Repository.Interfaces
         /// 取得所有車次定期時刻表資料
         /// </summary>
         /// <returns></returns>
-        Task<IEnumerable<RailGeneralTimetablePTXModel>> GetGeneralTimetable();
+        Task<IEnumerable<RailGeneralTimetablePTXModel>> GetGeneralTimetableAsync();
     }
 }

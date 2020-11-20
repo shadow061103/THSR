@@ -40,9 +40,9 @@ namespace THSR.Repository.Implements
         /// 取得所有車次定期時刻表資料
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<RailGeneralTimetablePTXModel>> GetGeneralTimetable()
+        public async Task<IEnumerable<RailGeneralTimetablePTXModel>> GetGeneralTimetableAsync()
         {
-            var url = "https://ptx.transportdata.tw/MOTC/v2/Rail/THSR/GeneralTimetable?$top=200&$format=JSON";
+            var url = "https://ptx.transportdata.tw/MOTC/v2/Rail/THSR/GeneralTimetable?$top=250&$format=JSON";
             return await _apiHelper.GetPTXAsync<IEnumerable<RailGeneralTimetablePTXModel>>(url);
         }
     }

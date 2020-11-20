@@ -11,17 +11,9 @@ namespace THSR.Repository.Models.Entities
         /// </summary>
         public string OriginStationID { get; set; }
         /// <summary>
-        /// 起點車站名稱 
-        /// </summary>
-        public string OriginStationName { get; set; }
-        /// <summary>
         /// 迄點車站代碼
         /// </summary>
         public string DestinationStationID { get; set; }
-        /// <summary>
-        /// 迄點車站名稱
-        /// </summary>
-        public string DestinationStationName { get; set; }
         /// <summary>
         /// 商務車廂票價
         /// </summary>
@@ -38,5 +30,9 @@ namespace THSR.Repository.Models.Entities
         /// 更新時間
         /// </summary>
         public DateTime? UpdateTime { get; set; }
+        /// <summary>
+        /// 行駛方向 : [0:&apos;南下&apos;,1:&apos;北上&apos;]
+        /// </summary>
+        public bool? Direction { get; set; }
     }
 }

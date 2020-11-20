@@ -6,7 +6,7 @@
    "IncludeConnectionString": false,
    "ModelNamespace": "",
    "OutputContextPath": "Models",
-   "OutputPath": "Models\\Entities",
+   "OutputPath": "Models",
    "ProjectRootNamespace": "THSR.Repository",
    "Schemas": null,
    "SelectedHandlebarsLanguage": 0,
@@ -15,6 +15,14 @@
       {
          "HasPrimaryKey": true,
          "Name": "[dbo].[Fare]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[GeneralTimetable]"
+      },
+      {
+         "HasPrimaryKey": true,
+         "Name": "[dbo].[RailStopTime]"
       },
       {
          "HasPrimaryKey": true,

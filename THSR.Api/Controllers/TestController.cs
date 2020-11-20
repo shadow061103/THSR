@@ -2,7 +2,9 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using THSR.Repository.Interfaces;
+using THSR.Repository.Models;
 using THSR.Repository.Models.PTX;
+using THSR.Service.Interface;
 
 namespace THSR.Api.Controllers
 {
@@ -12,9 +14,12 @@ namespace THSR.Api.Controllers
     {
         private readonly IWsTHSRRepository _stationRepository;
 
-        public TestController(IWsTHSRRepository stationRepository)
+        private ITimetableService _timetableService;
+
+        public TestController(IWsTHSRRepository stationRepository, ITimetableService timetableService)
         {
             _stationRepository = stationRepository;
+            _timetableService = timetableService;
         }
 
         [HttpGet]
@@ -28,6 +33,13 @@ namespace THSR.Api.Controllers
         public async Task<IEnumerable<HSRailFarePTXModel>> GetFare()
         {
             var model = await _stationRepository.GetFareAsync();
+            return model;
+        }
+
+        [HttpGet]
+        public async Task<IEnumerable<GeneralTimetable>> GetTime()
+        {
+            var model = await _timetableService.GetAsync();
             return model;
         }
     }
