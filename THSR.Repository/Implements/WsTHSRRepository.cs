@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using THSR.Repository.Infrastructure.Helpers;
 using THSR.Repository.Interfaces;
@@ -10,6 +11,7 @@ namespace THSR.Repository.Implements
     {
         private readonly IApiHelper _apiHelper;
 
+        //question https://ptx.transportdata.tw/PTX/Topic/1c57688a-7fdd-43ac-ab00-49d0e839ccc6
         public WsTHSRRepository(IApiHelper apiHelper)
         {
             _apiHelper = apiHelper;
@@ -42,8 +44,20 @@ namespace THSR.Repository.Implements
         /// <returns></returns>
         public async Task<IEnumerable<RailGeneralTimetablePTXModel>> GetGeneralTimetableAsync()
         {
+            //只有近45日內的
             var url = "https://ptx.transportdata.tw/MOTC/v2/Rail/THSR/GeneralTimetable?$top=99999&$format=JSON";
             return await _apiHelper.GetPTXAsync<IEnumerable<RailGeneralTimetablePTXModel>>(url);
+        }
+
+        /// <summary>
+        /// 取得指定日期所有車次的車次資料
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns></returns>
+        public async Task<IEnumerable<GeneraltraininfoPTXModel>> GetTrainInfoBySpecificDateAsync(DateTime date)
+        {
+            var url = $"https://ptx.transportdata.tw/MOTC/v2/Rail/THSR/DailyTrainInfo/TrainDate/{date:yyyy-MM-dd}?$top=99999&$format=JSON";
+            return await _apiHelper.GetPTXAsync<IEnumerable<GeneraltraininfoPTXModel>>(url);
         }
 
         /// <summary>

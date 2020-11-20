@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using THSR.Repository.Models.PTX;
 
@@ -24,6 +25,13 @@ namespace THSR.Repository.Interfaces
         /// </summary>
         /// <returns></returns>
         Task<IEnumerable<RailGeneralTimetablePTXModel>> GetGeneralTimetableAsync();
+
+        /// <summary>
+        /// 取得指定日期所有車次的車次資料
+        /// </summary>
+        /// <param name="date">The date.</param>
+        /// <returns></returns>
+        Task<IEnumerable<GeneraltraininfoPTXModel>> GetTrainInfoBySpecificDateAsync(DateTime date);
 
         /// <summary>
         /// 取得動態對號座剩餘座位資訊看板資料

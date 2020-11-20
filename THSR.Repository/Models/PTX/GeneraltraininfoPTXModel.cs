@@ -35,6 +35,6 @@
         /// <summary>
         /// 附註說明
         /// </summary>
-        public NotePTXModel NotePtxModel { get; set; }
+        public NotePTXModel Note { get; set; }
     }
 }
