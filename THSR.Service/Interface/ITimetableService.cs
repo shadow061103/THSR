@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using THSR.Repository.Models;
+﻿using System.Threading.Tasks;
 
 namespace THSR.Service.Interface
 {
@@ -10,7 +8,5 @@ namespace THSR.Service.Interface
         /// 新增列車時刻表資料
         /// </summary>
         Task InsertAsync();
-
-        Task<IEnumerable<GeneralTimetable>> GetAsync();
     }
 }

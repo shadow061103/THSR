@@ -36,14 +36,5 @@ namespace THSR.Service.Implements
 
             await _proxyRepository.SaveChangesAsync();
         }
-
-        public async Task<IEnumerable<GeneralTimetable>> GetAsync()
-        {
-            var source = await _wsRepository.GetGeneralTimetableAsync();
-
-            var timetables = _mapper.Map<IEnumerable<GeneralTimetable>>(source.Select(c => c.GeneralTimetable));
-
-            return timetables;
-        }
     }
 }
