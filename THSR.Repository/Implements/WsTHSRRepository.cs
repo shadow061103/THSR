@@ -35,5 +35,15 @@ namespace THSR.Repository.Implements
             var url = "https://ptx.transportdata.tw/MOTC/v2/Rail/THSR/ODFare?$top=500&$format=JSON";
             return await _apiHelper.GetPTXAsync<IEnumerable<HSRailFarePTXModel>>(url);
         }
+
+        /// <summary>
+        /// 取得所有車次定期時刻表資料
+        /// </summary>
+        /// <returns></returns>
+        public async Task<IEnumerable<RailGeneralTimetablePTXModel>> GetGeneralTimetable()
+        {
+            var url = "https://ptx.transportdata.tw/MOTC/v2/Rail/THSR/GeneralTimetable?$top=200&$format=JSON";
+            return await _apiHelper.GetPTXAsync<IEnumerable<RailGeneralTimetablePTXModel>>(url);
+        }
     }
 }
